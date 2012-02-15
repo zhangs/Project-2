@@ -32,9 +32,10 @@ function main() {
 		//your tasks
 
 		//1. Create a spotter and get it to insert tweets into the DOM
+		var searched = $("#term").val();
 	
 		var s = new Spotter("twitter.search", 
-							{q:"$('#term')", period:120},
+							{q:searched, period:120},
 							{buffer:true, bufferTimeout:750}
 							);
 						
