@@ -2,11 +2,12 @@
  * This is the entry point for our JavaScript program
  * Project 3
  */
+ 
+ // Need to add comments
 function main() {
 
 	var occurance = 0;
 
-    //your code goes here
 	$("#search_button").click(function() {
 		$("#search_button").fadeOut(2000, function() {
 
@@ -14,16 +15,19 @@ function main() {
 		$("#term").fadeOut(2000, function() {
 
 		});
-		
-	});
+	});	
 	
 	$("#search_button").click(startSearch);
-
+		
+	$('#restart_button').click(function() {
+		location.reload();
+	});
+	
 	function startSearch() {		
 	
 		var searched = $("#term").val();
 
-		var count_text = $("<p>How many times " + searched + " occured: </p>");
+		var count_text = $("<p>How many times the word " + "'" + searched + "'" + " occurred: </p>");
 		$("#results").append(count_text);	
 		
 		var s = new Spotter("twitter.search", 
