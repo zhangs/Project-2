@@ -4,7 +4,10 @@
  */
  
  // Need to add comments
+ // See if I can get the buttons to hide and not hide
 function main() {
+
+	$('#restart_button').fadeOut();
 
 	var occurance = 0;
 
@@ -14,7 +17,10 @@ function main() {
 		});
 		$("#term").fadeOut(2000, function() {
 
-		});
+		});		
+		
+		$('#restart_button').fadeIn();
+		
 	});	
 	
 	$("#search_button").click(startSearch);
@@ -39,7 +45,7 @@ function main() {
 		s.register(function(tweet) {
 			var profile_image = "<img src=' "+tweet.profile_image_url+" ' />";	
 		
-			var object = $("<p>" + profile_image + tweet.text+ "</p>");
+			var object = $("<p class='tcolor'>" + profile_image + tweet.text+ "</p>");
 			
 			$('#tweets').empty();					
 				
