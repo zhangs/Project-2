@@ -1,4 +1,3 @@
- // Need to add comments
 function main() {
 
 	// Restart button starts out hidden
@@ -12,14 +11,12 @@ function main() {
 	// function startsearch will also start
 	$("#search_button").click(function() {
 		$("#search_button").fadeOut(2000, function() {
-
 		});
+		
 		$("#term").fadeOut(2000, function() {
-
 		});		
 		
 		$('#restart_button').fadeIn();
-		
 	});	
 	
 	$("#search_button").click(startSearch);
@@ -31,7 +28,6 @@ function main() {
 	});
 	
 	function startSearch() {		
-
 		// Get what was typed in the text input area
 		var searched = $("#term").val();
 
@@ -44,8 +40,7 @@ function main() {
 							{q:"Nintendo", period:120},
 							{buffer:true, bufferTimeout:750}
 							);
-						
-						
+												
 		s.register(function(tweet) {
 			// Create a variable with information about the tweet
 			var profile_image = "<img src=' "+tweet.profile_image_url+" ' />";	
@@ -61,19 +56,17 @@ function main() {
 			$("#tweets").append(counting);			
 
 			// Briefly shows the tweet that matches the search
-			if (tweet.text.match(searched) ) {
+			if (tweet.text.match(searched)) {
 				occurance = occurance + 1;	
 				object.hide();
 				$("#tweets").append(object);
 				object.fadeIn();
 				object.fadeOut();
-			}
-								
+			}								
 		});
 	
 		s.start();
 	}	
-	
 }
 
 $(document).ready(function() {
