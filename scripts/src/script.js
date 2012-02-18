@@ -10,10 +10,10 @@ function main() {
 	// fade out and the restart button will fade in
 	// function startsearch will also start
 	$("#search_button").click(function() {
-		$("#search_button").fadeOut(2000, function() {
+		$("#search_button").fadeOut(600, function() {
 		});
 		
-		$("#term").fadeOut(2000, function() {
+		$("#term").fadeOut(600, function() {
 		});		
 		
 		$('#restart_button').fadeIn();
